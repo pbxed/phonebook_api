@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    @Query("select u from Person u where u.phoneNumber like %?1")
+    @Query("select u from Person u where u.phoneNumber like %?1%")
     List<Person> findUsersByPhoneNumber(String phoneNumber);
 }
 

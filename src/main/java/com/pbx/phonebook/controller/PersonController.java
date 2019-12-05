@@ -35,7 +35,6 @@ public class PersonController {
         return ResponseEntity.ok().body(person);
     }
 
-    // Only working with exact phone number. Need to change SQL query to return partial matches.
     @GetMapping("/persons/phone-number/{phoneNumber}")
     public List<Person> getPersonsByPhoneNumber(@PathVariable(value = "phoneNumber") String phoneNumber) {
         return personService.findPersonsByPhoneNumber(phoneNumber);

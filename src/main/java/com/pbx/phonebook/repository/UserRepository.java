@@ -1,14 +1,23 @@
 package com.pbx.phonebook.repository;
 
-import com.pbx.phonebook.dto.User;
+import com.pbx.phonebook.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("select u from User u where u.phoneNumber like %?1")
-    List<User> findUsersByPhoneNumber(String phoneNumber);
-}
+    Optional<User> findByEmail(String email);
 
+    Optional<User> findByUsernameOrEmail(String username, String email);
+
+    List<User> findByIdIn(List<Long> userIds);
+
+    Optional<User> findByUsername(String username);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
+
+}

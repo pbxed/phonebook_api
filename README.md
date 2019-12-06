@@ -1,6 +1,3 @@
-# phonebook_api
-
-
 # Phonebook API with Spring Boot, Mysql, JPA and Hibernate 
 
 ## Setup & Running

@@ -23,7 +23,7 @@ create database user_database
 
 ```bash
 mvn package
-java -jar target/spring-boot-rest-api-tutorial-0.0.1-SNAPSHOT.jar
+java -jar target/phonebook-0.0.1-SNAPSHOT.jar
 
 ```
 
